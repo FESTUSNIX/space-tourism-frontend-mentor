@@ -1,5 +1,5 @@
 import React from 'react'
 
 export const Technology = () => {
-	return <div>Technology</div>
+	return <div className='technology'>Technology</div>
 }

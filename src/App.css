@@ -1,0 +1,60 @@
+.App {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+
+.App:has(.home) {
+	background-image: url('./assets/home/background-home-mobile.jpg');
+}
+
+.App:has(.destinations) {
+	background-image: url('./assets/destination/background-destination-mobile.jpg');
+}
+
+.App:has(.crew) {
+	background-image: url('./assets/crew/background-crew-mobile.jpg');
+}
+
+.App:has(.technology) {
+	background-image: url('./assets/technology/background-technology-mobile.jpg');
+}
+
+@screen md {
+	.App:has(.home) {
+		background-image: url('./assets/home/background-home-tablet.jpg');
+	}
+
+	.App:has(.destinations) {
+		background-image: url('./assets/destination/background-destination-tablet.jpg');
+	}
+
+	.App:has(.crew) {
+		background-image: url('./assets/crew/background-crew-tablet.jpg');
+	}
+
+	.App:has(.technology) {
+		background-image: url('./assets/technology/background-technology-tablet.jpg');
+	}
+}
+
+@screen lg {
+	.App:has(.home) {
+		background-image: url('./assets/home/background-home-desktop.jpg');
+	}
+
+	.App:has(.destinations) {
+		background-image: url('./assets/destination/background-destination-desktop.jpg');
+	}
+
+	.App:has(.crew) {
+		background-image: url('./assets/crew/background-crew-desktop.jpg');
+	}
+
+	.App:has(.technology) {
+		background-image: url('./assets/technology/background-technology-desktop.jpg');
+	}
+}

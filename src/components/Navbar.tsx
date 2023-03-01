@@ -22,45 +22,46 @@ export const Navbar = () => {
 	const [show, setShow] = useState<boolean>(false)
 
 	return (
-		<nav className='relative w-full p-6 flex items-center justify-between md:p-0 lg:py-10 lg:pl-10'>
-			<Logo className='md:mx-8 lg:mx-4 shrink-0' />
+		<nav className='relative z-50 flex w-full items-center justify-between p-6 md:p-0 lg:py-10 lg:pl-10'>
+			<Logo className='shrink-0 md:mx-8 lg:mx-4' />
 
 			{!isMD && !show && (
-				<div className='cursor-pointer p-2 -m-2'>
+				<div className='-m-2 cursor-pointer p-2'>
 					<BurgerIcon onClick={() => setShow(true)} />
 				</div>
 			)}
 
-			{isLG && <div className='h-[0.1px] w-[120%] -translate-y-1/2 translate-x-8 bg-white/25 z-10'></div>}
+			{isLG && <div className='z-10 h-[0.1px] w-[120%] -translate-y-1/2 translate-x-8 bg-white/25'></div>}
 
 			<AnimatePresence>
-				<OutsideClickHandler onOutsideClick={() => setShow(false)} display='contents'>
-					{(!isMD ? show : true) && (
+				{(!isMD ? show : true) && (
+					<OutsideClickHandler onOutsideClick={() => setShow(false)} display='contents'>
 						<motion.div
-							className='h-full fixed top-0 right-0 flex flex-col justify-start gap-12 bg-white/5 backdrop-blur-2xl nav-animation md:relative md:h-auto '
-							initial={{ x: '100%' }}
+							className='fixed top-0 right-0 flex h-full flex-col justify-start gap-12 bg-white/5 backdrop-blur-2xl md:relative md:h-auto '
+							initial={{ x: '200%' }}
 							animate={{ x: 0 }}
 							exit={{ x: '110%' }}>
 							{!isMD && (
-								<CloseIcon onClick={() => setShow(false)} className='self-end translate-y-1/2 m-6 cursor-pointer' />
+								<CloseIcon onClick={() => setShow(false)} className='m-6 translate-y-1/2 cursor-pointer self-end' />
 							)}
 
-							<div
-								className='relative w-full flex flex-col items-start gap-3 md:flex-row md:h-auto md:gap-10 md:px-10 
-							lg:gap-12 lg:pl-24 lg:pr-28
-							xl:gap-14 xl:pl-32 xl:pr-44'>
+							<div className='relative flex w-full flex-col items-start gap-3 md:h-auto md:flex-row md:gap-10 md:px-10 lg:gap-12 lg:pl-24 lg:pr-28 xl:gap-14 xl:pl-32 xl:pr-44'>
 								{pages.map((page, index) => (
-									<NavLink to={page.path} key={index} className='nav-link'>
+									<NavLink
+										to={page.path}
+										key={index}
+										onClick={() => setShow(false)}
+										className='nav-link relative w-full py-2 pl-8 pr-24 after:absolute after:h-0 after:w-1 after:bg-white/30 after:duration-300 after:ease-out max-md:after:top-1/2 max-md:after:right-0  max-md:after:-translate-y-1/2 max-md:hover:after:h-3/4 md:px-0 md:py-10 md:after:bottom-0 md:after:left-1/2 md:after:h-1 md:after:w-0 md:after:-translate-x-1/2 md:after:hover:w-full'>
 										<p className='text-sans'>
-											{(!isMD || isLG) && <span className='font-bold mr-2 lg:mr-3'>0{index}</span>}
+											{(!isMD || isLG) && <span className='mr-2 font-bold lg:mr-3'>0{index}</span>}
 											<span className='uppercase tracking-[2.7px]'>{page.name}</span>
 										</p>
 									</NavLink>
 								))}
 							</div>
 						</motion.div>
-					)}
-				</OutsideClickHandler>
+					</OutsideClickHandler>
+				)}
 			</AnimatePresence>
 		</nav>
 	)

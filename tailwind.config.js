@@ -14,7 +14,8 @@ module.exports = {
 		},
 		fontFamily: {
 			serif: ['Bellefair', ...defaultTheme.fontFamily.serif],
-			sans: ['Barlow Condensed', 'sans-serif']
+			sans: ['Barlow', 'sans-serif'],
+			'sans-condensed': ['Barlow Condensed', 'sans-serif']
 		},
 		extend: {
 			colors: {
