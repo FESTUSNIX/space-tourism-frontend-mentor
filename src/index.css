@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=Bellefair&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&family=Bellefair&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -14,9 +13,22 @@
 		width: 100%;
 		background-image: url('./assets/home/background-home-mobile.jpg');
 		background-size: cover;
+		background-position: center center;
 		background-repeat: no-repeat;
 		color: #fff;
 		overflow-x: hidden;
+	}
+
+	@screen md {
+		body {
+			background-image: url('./assets/home/background-home-tablet.jpg');
+		}
+	}
+
+	@screen lg {
+		body {
+			background-image: url('./assets/home/background-home-desktop.jpg');
+		}
 	}
 }
 
@@ -50,4 +62,32 @@
 			max-width: 1400px;
 		}
 	}
+
+	.nav-link {
+		@apply w-full relative pl-8 pr-24 py-2 
+		after:h-0 after:w-1 after:absolute max-md:after:top-1/2 max-md:after:right-0 after:bg-white/30 max-md:after:-translate-y-1/2 after:duration-300  after:ease-out max-md:hover:after:h-3/4
+		md:px-0 md:py-10
+		md:after:bottom-0 md:after:left-1/2 md:after:-translate-x-1/2 md:after:h-1 md:after:w-0 md:after:hover:w-full;
+	}
+
+	.nav-link.active {
+		@apply max-md:after:h-3/4 after:bg-white md:after:w-full;
+	}
+
+
+}
+
+@layer utilities {
+	/* .nav-animation {
+		animation: navAnimation 0.3s forwards;
+	}
+
+	@keyframes navAnimation {
+		from {
+			transform: translateX(100%);
+		}
+		to {
+			transform: translateX(0);
+		}
+	} */
 }
