@@ -37,7 +37,7 @@ export const Navbar = () => {
 				{(!isMD ? show : true) && (
 					<OutsideClickHandler onOutsideClick={() => setShow(false)} display='contents'>
 						<motion.div
-							className='fixed top-0 right-0 flex h-full flex-col justify-start gap-12 bg-white/5 backdrop-blur-2xl md:relative md:h-auto '
+							className='fixed top-0 right-0 flex h-full flex-col justify-start gap-12 bg-white/5 backdrop-blur-2xl md:relative md:h-auto'
 							initial={{ x: '200%' }}
 							animate={{ x: 0 }}
 							exit={{ x: '110%' }}>

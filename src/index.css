@@ -20,10 +20,6 @@
 	}
 }
 
-#root {
-	min-height: 100%;
-}
-
 @layer components {
 	.wrapper {
 		max-width: calc(100vw - 3em);
@@ -43,7 +39,7 @@
 		}
 	}
 
-	@screen lg {
+	@screen xl {
 		.wrapper {
 			max-width: calc(100vw - 10em);
 		}
