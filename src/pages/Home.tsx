@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 export const Home = () => {
 	return (
-		<div className='wrapper home mt-5 mb-12 flex h-full grow flex-col items-center justify-between sm:mt-10 sm:px-10 md:mt-24 md:max-lg:max-w-xs lg:mb-40 lg:flex-row lg:items-end'>
+		<div className='wrapper home mt-5 mb-12 flex h-full grow flex-col items-center justify-between sm:mt-10 md:mt-24 md:max-lg:max-w-xs lg:mb-40 lg:flex-row lg:items-end'>
 			<div className='max-lg:text-center lg:mr-40'>
 				<h2 className='mb-1 text-base uppercase tracking-[2.7px] text-secondary sm:text-lg md:mb-6 md:text-xl md:tracking-[3.38px] lg:text-[28px] lg:tracking-[4.72px]'>
 					So, you want to travel to
