@@ -1,4 +1,5 @@
-import { NavLink } from 'react-router-dom'
+import { useEffect } from 'react'
+import { Link, NavLink } from 'react-router-dom'
 import { ReactComponent as Logo } from '../assets/shared/logo.svg'
 import { ReactComponent as BurgerIcon } from '../assets/shared/icon-hamburger.svg'
 import { ReactComponent as CloseIcon } from '../assets/shared/icon-close.svg'
@@ -21,9 +22,15 @@ export const Navbar = () => {
 
 	const [show, setShow] = useState<boolean>(false)
 
+	useEffect(() => {
+		show ? (document.body.style.position = 'fixed') : (document.body.style.position = '')
+	}, [show])
+
 	return (
 		<nav className='relative z-50 flex w-full items-center justify-between p-6 md:p-0 lg:py-10 lg:pl-10'>
-			<Logo className='shrink-0 md:mx-8 lg:mx-4' />
+			<Link to='/'>
+				<Logo className='shrink-0 md:mx-8 lg:mx-4' />
+			</Link>
 
 			{!isMD && !show && (
 				<div className='-m-2 cursor-pointer p-2'>
