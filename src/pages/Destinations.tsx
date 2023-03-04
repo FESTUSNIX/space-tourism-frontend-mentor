@@ -17,14 +17,14 @@ export const Destinations = () => {
 				<div className='flex flex-col items-center lg:items-start'>
 					<div className='mb-8 flex gap-7 text-sm uppercase tracking-[2.36px] text-secondary md:mb-10 md:gap-8 md:text-base md:tracking-[2.7px] lg:mb-12'>
 						{data?.destinations.map((destination, index: number) => (
-							<h3
+							<h2
 								key={destination.name}
 								onClick={() => setCurrentPage(index)}
 								className={`cursor-pointer border-b-[3px] py-1.5 duration-300 ${
 									index === currentPage ? 'border-white' : 'border-b-transparent hover:border-white/50'
 								}`}>
 								{destination.name}
-							</h3>
+							</h2>
 						))}
 					</div>
 
