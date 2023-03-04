@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { PageTitle } from '../components'
 import { data } from '../data/data'
 
@@ -22,7 +22,7 @@ export const Crew = () => {
 
 				<div className='flex flex-col items-center md:mb-4 xl:mb-8 xl:items-start'>
 					<div className='mb-8 flex gap-4 text-sm uppercase tracking-[2.36px] text-secondary md:order-1 md:mb-10 md:mt-10 md:text-base xl:mb-12 xl:gap-6'>
-						{data?.crew.map((crewMember, index: number) => (
+						{data?.crew.map((item, index: number) => (
 							<span
 								key={index}
 								className={`cursor-pointer rounded-full p-1.5 lg:p-2 ${
@@ -32,7 +32,7 @@ export const Crew = () => {
 						))}
 					</div>
 
-					<h2 className='font-serif uppercase text-white/50 md:mb-4 md:text-2xl lg:mb-8 lg:text-[32px]'>{crew.role}</h2>
+					<h3 className='font-serif uppercase text-white/50 md:mb-4 md:text-2xl lg:mb-8 lg:text-[32px]'>{crew.role}</h3>
 
 					<div className='text-center xl:text-start'>
 						<h1 className='mb-4 font-serif text-2xl uppercase md:mb-6 md:text-[40px] lg:mb-12 lg:text-[56px]'>
