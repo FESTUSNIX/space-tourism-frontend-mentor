@@ -10,7 +10,7 @@ import OutsideClickHandler from 'react-outside-click-handler'
 
 type Pages = { name: string; path: string }[]
 
-export const Navbar = () => {
+export const Navbar = ({ setLocationIndex }: { setLocationIndex: React.Dispatch<React.SetStateAction<number>> }) => {
 	const { isMD, isLG } = useResponsive()
 
 	const pages: Pages = [
@@ -57,7 +57,10 @@ export const Navbar = () => {
 									<NavLink
 										to={page.path}
 										key={index}
-										onClick={() => setShow(false)}
+										onClick={() => {
+											setShow(false)
+											setLocationIndex(index)
+										}}
 										className='nav-link relative w-full py-2 pl-8 pr-24 after:absolute after:h-0 after:w-1 after:bg-white/30 after:duration-300 after:ease-out max-md:after:top-1/2 max-md:after:right-0  max-md:after:-translate-y-1/2 max-md:hover:after:h-3/4 md:px-0 md:py-10 md:after:bottom-0 md:after:left-1/2 md:after:h-1 md:after:w-0 md:after:-translate-x-1/2 md:after:hover:w-full'>
 										<p className='text-sans'>
 											{(!isMD || isLG) && <span className='mr-2 font-bold lg:mr-3'>0{index}</span>}
