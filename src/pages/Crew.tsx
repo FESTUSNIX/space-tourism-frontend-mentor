@@ -1,21 +1,26 @@
 import { useState } from 'react'
-import { PageTitle } from '../components'
+import { MotionSlider, PageTitle } from '../components'
 import { data } from '../data/data'
 
 export const Crew = () => {
-	const [currentPage, setCurrentPage] = useState<number>(0)
+	const [page, setPage] = useState(0)
 
-	const crew = data.crew[currentPage]
+	const crew = data.crew[page]
 
 	return (
 		<div className='crew flex grow flex-col items-center'>
 			<PageTitle pageNumber={2}>meet your crew</PageTitle>
 
-			<div className='wrapper flex w-full grow flex-col items-center md:flex-col-reverse xl:flex-row-reverse xl:items-end xl:justify-between xl:gap-12'>
+			<MotionSlider
+				page={page}
+				setPage={setPage}
+				dataLength={data.crew.length}
+				className='wrapper flex w-full grow cursor-grab flex-col items-center md:flex-col-reverse xl:flex-row-reverse xl:items-end xl:justify-between xl:gap-12'>
 				<div className='relative flex w-full border-white/20 max-md:mb-8 max-md:border-b md:mt-auto md:h-0 md:max-w-xl md:grow xl:h-auto xl:w-auto xl:shrink-0 xl:grow'>
 					<img
 						src={crew.images.webp}
 						alt=''
+						draggable='false'
 						className='mx-auto max-md:w-1/2 xl:absolute xl:bottom-0 xl:left-1/2 xl:max-w-3xl xl:-translate-x-1/2'
 					/>
 				</div>
@@ -26,9 +31,9 @@ export const Crew = () => {
 							<span
 								key={index}
 								className={`cursor-pointer rounded-full p-1.5 lg:p-2 ${
-									currentPage === index ? 'bg-white' : 'bg-white/20 duration-300 hover:bg-white/50'
+									page === index ? 'bg-white' : 'bg-white/20 duration-300 hover:bg-white/50'
 								}`}
-								onClick={() => setCurrentPage(index)}></span>
+								onClick={() => setPage(index)}></span>
 						))}
 					</div>
 
@@ -45,7 +50,7 @@ export const Crew = () => {
 						</div>
 					</div>
 				</div>
-			</div>
+			</MotionSlider>
 		</div>
 	)
 }

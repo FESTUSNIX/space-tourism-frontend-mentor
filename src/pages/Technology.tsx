@@ -1,20 +1,32 @@
 import { useState } from 'react'
-import { PageTitle } from '../components'
+import { MotionSlider, PageTitle } from '../components'
 import { data } from '../data/data'
 import useResponsive from '../hooks/useResponsive'
 
 export const Technology = () => {
 	const { isLG } = useResponsive()
-	const [currentPage, setCurrentPage] = useState<number>(0)
-	const technology = data.technology[currentPage]
+
+	const [page, setPage] = useState(0)
+
+	const technology = data.technology[page]
 
 	return (
-		<div className='technology flex grow flex-col items-center'>
+		<div className='technology mb-8 flex grow flex-col items-center'>
 			<PageTitle pageNumber={3}>space launch 101</PageTitle>
 
-			<div className='2xl:wrapper flex w-full grow flex-col items-center lg:flex-row-reverse lg:gap-12'>
+			<MotionSlider
+				page={page}
+				setPage={setPage}
+				vertical={isLG}
+				dataLength={data.technology.length}
+				className='2xl:wrapper flex w-full grow cursor-grab flex-col items-center lg:flex-row-reverse lg:gap-12'>
 				<div className='w-full xl:w-auto xl:shrink-0 xl:grow 2xl:shadow-lg'>
-					<img src={isLG ? technology.images.portrait : technology.images.landscape} alt='' className='w-full' />
+					<img
+						src={isLG ? technology?.images.portrait : technology?.images.landscape}
+						alt=''
+						className='w-full'
+						draggable='false'
+					/>
 				</div>
 
 				<div className='wrapper flex flex-col items-center lg:ml-20 lg:max-xl:items-start xl:ml-32 xl:flex-row xl:gap-16 2xl:ml-0'>
@@ -23,9 +35,9 @@ export const Technology = () => {
 							<span
 								key={index}
 								className={`grid h-10 w-10 cursor-pointer place-items-center rounded-full border font-serif md:h-[60px] md:w-[60px] md:text-2xl lg:h-20 lg:w-20 lg:text-[32px] ${
-									currentPage === index ? 'bg-white text-dark' : 'border-white/20 duration-300 hover:border-white'
+									page === index ? 'bg-white text-dark' : 'border-white/20 duration-300 hover:border-white'
 								}`}
-								onClick={() => setCurrentPage(index)}>
+								onClick={() => setPage(index)}>
 								{index + 1}
 							</span>
 						))}
@@ -45,7 +57,7 @@ export const Technology = () => {
 						</p>
 					</div>
 				</div>
-			</div>
+			</MotionSlider>
 		</div>
 	)
 }
