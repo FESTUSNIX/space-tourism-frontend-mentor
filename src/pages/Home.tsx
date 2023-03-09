@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-export const Home = () => {
+export const Home = ({ setLocationIndex }: { setLocationIndex: React.Dispatch<React.SetStateAction<number>> }) => {
 	return (
 		<div className='wrapper home mt-5 mb-12 flex h-full grow flex-col items-center justify-between sm:mt-10 md:mt-24 md:max-lg:max-w-xs lg:mb-40 lg:flex-row lg:items-end'>
 			<div className='max-lg:text-center lg:mr-40'>
@@ -20,6 +20,7 @@ export const Home = () => {
 
 			<Link
 				to='/destination'
+				onClick={() => setLocationIndex(1)}
 				className='group relative mt-14 h-40 w-40 shrink-0 sm:h-48 sm:w-48 md:h-60 md:w-60 lg:h-64 lg:w-64 xl:h-72 xl:w-72'>
 				<div className='absolute left-1/2 top-1/2 h-[130%] w-[130%] -translate-x-1/2 -translate-y-1/2 scale-0 rounded-full bg-white/10 backdrop-blur-lg duration-300 ease-in-out group-hover:scale-100'></div>
 				<div className='relative grid h-full w-full place-items-center rounded-full bg-white font-serif text-xl uppercase tracking-[1.25px] text-dark md:text-3xl'>

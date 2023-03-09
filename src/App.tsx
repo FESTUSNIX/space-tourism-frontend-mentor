@@ -68,7 +68,7 @@ function App() {
 					custom={{ prevLocationIndex, locationIndex, isMD }}
 					className='flex h-full w-full grow flex-col'>
 					<Routes location={location} key={location.key}>
-						<Route path='/' element={<Home />} />
+						<Route path='/' element={<Home setLocationIndex={setLocationIndex} />} />
 						<Route path='/destination' element={<Destinations />} />
 						<Route path='/crew' element={<Crew />} />
 						<Route path='/technology' element={<Technology />} />

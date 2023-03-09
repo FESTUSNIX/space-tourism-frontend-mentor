@@ -1,3 +1,64 @@
+# Frontend Mentor - Space tourism website solution
+
+This is a solution to the [Space tourism website challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/space-tourism-multipage-website-gRWj1URZ3). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
+
+## Table of contents
+
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+  - [Useful resources](#useful-resources)
+- [Author](#author)
+
+## Overview
+
+### The challenge
+
+Users should be able to:
+
+- View the optimal layout for each of the website's pages depending on their device's screen size
+- See hover states for all interactive elements on the page
+- View each page and be able to toggle between the tabs to see new information
+
+### Screenshot
+
+![](https://imgur.com/Ipy8ayD.jpg)
+
+### Links
+
+- Live Site URL: [https://space-tourism-frontend-mentor-silk.vercel.app/](https://space-tourism-frontend-mentor-silk.vercel.app/)
+
+## My process
+
+### Built with
+
+- [React](https://reactjs.org/) - JS library
+- [Typescript](https://www.typescriptlang.org/) - React framework
+- [Tailwind-CSS](https://tailwindcss.com/) - For styles
+- [Framer-motion](https://www.framer.com/motion/) - Animation library
+
+### What I learned
+
+I started getting comfortable with basic typing and I hope to start using more advanced typescript concepts in the future projects. I also discovered how powerful Framer Motion is and I've used it for page/tabs transitions.
+
+### Continued development
+
+For my next project I want to learn and use Next.js and Redux boilerplated with Vite for a better development experience.
+
+### Useful resources
+
+- [Framer Motion by The Net Ninja](https://youtu.be/2V1WK-3HQNk) - An amazing course for Framer Motion
+
+## Author
+
+- Github - [FESTUSNIX](https://github.com/FESTUSNIX/)
+- Frontend Mentor - [@FESTUSNIX](https://www.frontendmentor.io/profile/FESTUSNIX)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
