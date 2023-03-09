@@ -50,7 +50,7 @@ export const MotionSlider = ({ children, page, setPage, className, vertical, dat
 
 	const motionVal = useMotionValue(0)
 
-	const dragDistance = isMD ? 150 : 100
+	const dragDistance = isMD ? 150 : 50
 
 	const handleDrag = () => {
 		if (motionVal.get() > dragDistance) {

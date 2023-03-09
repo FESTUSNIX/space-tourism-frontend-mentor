@@ -28,7 +28,7 @@ export const Navbar = ({ setLocationIndex }: { setLocationIndex: React.Dispatch<
 
 	return (
 		<nav className='relative z-50 flex w-full items-center justify-between p-6 md:p-0 lg:py-10 lg:pl-10'>
-			<Link to='/'>
+			<Link to='/' onClick={() => setLocationIndex(0)}>
 				<Logo className='shrink-0 md:mx-8 lg:mx-4' />
 			</Link>
 

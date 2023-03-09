@@ -9,7 +9,6 @@ export const Technology = () => {
 	const [page, setPage] = useState(0)
 
 	const technology = data.technology[page]
-
 	return (
 		<div className='technology mb-8 flex grow flex-col items-center'>
 			<PageTitle pageNumber={3}>space launch 101</PageTitle>
